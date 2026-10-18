@@ -32,5 +32,6 @@ docker compose down -v           # stop and wipe the database
 
 ## Troubleshooting
 
-- **Port already in use:** stop whatever uses 5432, 8000 or 5173 (often a local Postgres), or change the left-hand port in `docker-compose.yml`.
+- **Port 8000 already allocated:** copy `.env.example` to `.env`, set `BACKEND_PORT=8001`, then run `docker compose up --build` again. The frontend follows automatically, and the API is then at http://localhost:8001/docs.
+- **Port 5432 or 5173 in use:** stop whatever uses it (often a local Postgres), or change the left-hand port in `docker-compose.yml`.
 - **Different DB credentials:** copy `.env.example` to `.env` and edit it.
