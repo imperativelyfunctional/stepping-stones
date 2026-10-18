@@ -13,7 +13,7 @@ The first build takes a few minutes. When it settles:
 | Service  | URL                          | Port |
 | -------- | ---------------------------- | ---- |
 | Frontend | http://localhost:5173        | 5173 |
-| Backend  | http://localhost:8000/docs   | 8000 |
+| Backend  | http://localhost:8001/docs   | 8001 |
 | Postgres | `localhost`                  | 5432 |
 
 The frontend page should show **Backend health: ok (database: connected)**.

@@ -1,6 +1,6 @@
 # Local development stack: Postgres + FastAPI + React (Vite)
 #   Frontend  http://localhost:5173
-#   Backend   http://localhost:8000   (API docs at /docs)
+#   Backend   http://localhost:8001   (API docs at /docs)
 #   Postgres  localhost:5432
 services:
   db:
@@ -26,7 +26,7 @@ services:
       DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-stepping}:${POSTGRES_PASSWORD:-stepping}@db:5432/${POSTGRES_DB:-stepping_stones}
       CORS_ORIGINS: http://localhost:5173
     ports:
-      - "8000:8000"
+      - "8001:8000"
     volumes:
       - ./backend:/app
     depends_on:
@@ -37,7 +37,7 @@ services:
     build: ./frontend
     command: npm run dev -- --host 0.0.0.0 --port 5173
     environment:
-      VITE_API_URL: http://localhost:8000
+      VITE_API_URL: http://localhost:8001
     ports:
       - "5173:5173"
     volumes:
